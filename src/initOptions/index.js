@@ -1,7 +1,9 @@
 import { dCls, dCbs } from './default'
-import { initClass } from '../../utils/dom'
-import { deepcopy, initCallback } from '../../utils/common'
-import { dateStrToDateObj, getDateInfo } from '../../utils/date'
+import { 
+  initClass, // dom
+  deepcopy, initCallback, // common
+  dateStrToDateObj, getDateInfo // date
+} from '../utils'
 
 function initSelectDate(options) {
   const { cmz_initSelectDate } = options
