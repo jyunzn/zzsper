@@ -1,31 +1,9 @@
 import { dCls, dCbs } from './default'
-import { 
+import {
   initClass, // dom
   deepcopy, initCallback, // common
   dateStrToDateObj, getDateInfo // date
 } from '../utils'
-
-function initSelectDate(options) {
-  const { cmz_initSelectDate } = options
-  
-
-  let dateObj
-  if (cmz_initSelectDate) {
-    dateObj = dateStrToDateObj(cmz_initSelectDate)
-    delete options.cmz_initSelectDate
-  }
-
-
-  let init = null
-  let cur = null
-  if (dateObj) {
-    const dateInfo = getDateInfo(dateObj)
-    init = { ...dateInfo }
-    cur = { ...dateInfo }
-  }
-  return { cur, init }
-}
-
 
 function getZZSPSetting(opts) {
   const set = {}
@@ -38,6 +16,26 @@ function getZZSPSetting(opts) {
   return set
 }
 
+function initSelectDate(options) {
+  const { cmz_initSelectDate } = options
+
+  // get date
+  let dateObj
+  if (cmz_initSelectDate) {
+    dateObj = dateStrToDateObj(cmz_initSelectDate)
+    delete options.cmz_initSelectDate
+  }
+
+  // init select date
+  let init = null
+  let cur = null
+  if (dateObj) {
+    const dateInfo = getDateInfo(dateObj)
+    init = { ...dateInfo }
+    cur = { ...dateInfo }
+  }
+  return { cur, init }
+}
 
 function handleInitCb(options) {
   const cbs = deepcopy(dCbs)

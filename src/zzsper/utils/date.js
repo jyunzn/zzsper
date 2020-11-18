@@ -19,5 +19,5 @@ export const getDateInfo = dObj => {
   const year = dObj.getFullYear()
   const month = dObj.getMonth() + 1
   const date = dObj.getDate()
-  return { year, month, date } 
+  return { year, month, date }
 }

@@ -34,9 +34,8 @@ export function initClass(options, dCls) {
 }
 
 export function findParentNodeByClassList(dD, cls_monthWrap) {
-  
   const p = dD.parentElement || dD.parentNode
- 
+
   if ([...p.classList].includes(cls_monthWrap[0])) {
     return p
   } else if (p === null) {

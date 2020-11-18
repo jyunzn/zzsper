@@ -22,7 +22,6 @@ export function deepcopy(target) {
   }
 }
 
-
 export function initCallback(cbObj, cbs, del) {
   for (let key in cbs) {
     const cbArr = cbs[key]
