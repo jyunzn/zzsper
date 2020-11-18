@@ -1,8 +1,7 @@
 import { onCreated } from './onCreated'
 import { onBeforeDomBeAssyAtResetDom } from './onBeforeDomBeAssyAtResetDom'
 
-
-export const zzsper = {}
+const zzsper = {}
 
 zzsper.install = (zz) => {
   zz.mixin({
@@ -10,3 +9,5 @@ zzsper.install = (zz) => {
     onBeforeDomBeAssyAtResetDom
   })
 }
+
+export default zzsper
