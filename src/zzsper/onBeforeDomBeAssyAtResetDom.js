@@ -3,12 +3,12 @@ import { addClass, removeClass } from './utils'
 function handlebeMoveDoms(datas, zzsp) {
   const { cls: { cls_selected }, selectDate } = zzsp
   if (selectDate.cur === null) return false
-  
-  const { 
-    contentDs, 
+
+  const {
+    contentDs,
     diffM: {
-      beforeYM: { year: bY, month: bM }, 
-      nextYM: { year: nY, month: nM } 
+      beforeYM: { year: bY, month: bM },
+      nextYM: { year: nY, month: nM }
     }
   } = datas
   const { year: sY, month: sM, date: sD } = selectDate.cur
@@ -25,7 +25,7 @@ function handlebeMoveDoms(datas, zzsp) {
 }
 
 export function onBeforeDomBeAssyAtResetDom(datas) {
-  const zzsp = datas.opts.zzsp
+  const { zzsp } = datas.opts
   if (zzsp) {
     handlebeMoveDoms(datas, zzsp)
   }
